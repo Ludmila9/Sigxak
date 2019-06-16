@@ -50,7 +50,6 @@ img:hover{
 	overflow: hidden;
 }
 
-
 .container{
 	max-width: 1920px;
 	padding: 100px 260px;
@@ -126,8 +125,6 @@ img:hover{
 
 
 
-
-
 // HEADER
 
 
@@ -149,6 +146,7 @@ img:hover{
 		margin-top: 480px;
 		font-family: 'Signika', sans-serif;
 		color: #FFF;
+		text-align: center;
 	}
 	& p{
 		font-size: 48px;
@@ -157,6 +155,7 @@ img:hover{
 		margin-top: 60px;
 		margin-bottom: 17px;
 		color: #FFF;
+		text-align: center;
 	}
 	&-btn{
 		margin-bottom: 300px;
@@ -657,6 +656,7 @@ img:hover{
 	width: 100%;
 	text-align: center;
 	height: 612px;
+	overflow: hidden;
 	& img{
 		width: 100%;
 		object-fit: cover;
@@ -1165,31 +1165,51 @@ img:hover{
 		}
 	}
 
-	.about {
+	.about{
 		& .container{
 			padding-top: 70px;
 			padding-bottom: 30px;
 		}
+		&-content{
+			flex-direction: column;
+			align-content: center;
+		}
 		&-team{
 			margin-top: 50px;
+			flex-direction: column;
+			align-content: center;
 		}
 		&-content-box{
+			width: 100%;
 			line-height: 23px;
+			margin-left: 0;
+			margin-top: 15px;
+		}
+		&-team-box{
+			margin-left: 0;
+			width: 100%;
 		}
 	}
-	.about-content-box,
-	.about-team-box,
+
 	.persone{
-		margin-left: 25px;
-		width: calc((100%-25px)/2);
-	}
-	.persone{
-		height: 570px;
+		height: 650px;
+		margin-bottom: 50px;
+		&:nth-of-type(2n){
+			margin-left: 50px;
+		}
+		&__img,
+		&__img img{
+			height: 370px;
+		}
 		&-about{
 			padding: 0 15px 20px;
+			display: none;
 		}
 		&-about-hov{
 			padding: 0 15px 20px;
+			top: 370px;
+			height: 315px;
+			opacity: 1;
 		}
 		&__name{
 			font-size: 17px;
@@ -1200,13 +1220,14 @@ img:hover{
 		&__name:after{
 			margin-left: 4px;
 		}
+		&__soc{
+			width: 230px;
+		}
 		&__soc-list{
 			padding: 0 40px;
 		}
 	}
-	.persone:hover .persone-about-hov{
-		height: 315px;
-	}
+	
 	.potrfolio {
 		& .container{
 			padding-top: 50px;
@@ -1214,47 +1235,32 @@ img:hover{
 		&-buttons{
 			margin: 40px 0;
 		}
+		&-btn{
+			height: 70px;
+		}
 		&-gallery{
 			&-box img{
-				transform: scale(1.3);
-				
-				// если размер картинок большой, то можно не использовать
-
+				transform: scale(1.05);
 			}
 			&-item{
 				width: 50%;
 			}
 		}
 	}
-	.blog{
-		& .container{
-			padding-top: 50px;
-			padding-bottom: 0;
-		}
-		&-item{
-			&__category a{
-				font-size: 15px;
-			}
-			&__title a{
-				font-size: 22px;
-				line-height: 22px;
-				max-height: 22px*4;
-			}
-			& a{
-				font-size: 22px;
-				line-height: 18px;
-				max-height: 18px*4;
-			}
-			&__text{
-				font-size: 15px;
-				line-height: 20px;
-			}
-		}
-	}
-
+	
 	.services{
 		padding-bottom: 60px;
 		&-content{
+			flex-direction: column;
+			margin: 0;
+			padding: 0 50px;
+			&-box{
+				margin-top: 50px;
+				margin-left: 0;
+			}
+			&-item{
+				margin-top: 50px;
+			}
 			&-icon{
 				width: 90px;
 				height: 90px;
@@ -1265,16 +1271,63 @@ img:hover{
 			&-text{
 				line-height: 23px;
 			}
+			&-btn{
+				opacity: 1;
+				margin-top: 25px;
+			}
+		}
+	}
+	.blog{
+		& .container{
+			padding-top: 50px;
+			padding-bottom: 0;
+		}
+		&-box{
+			width: 100%;
+		}
+		&-item{
+			width: calc((94%-25px)/2);
+			&:nth-of-type(2n){
+				margin-left: 25px;
+			}
+			&__category a{
+				font-size: 15px;
+			}
+			&__title a{
+				font-size: 22px;
+				line-height: 20px;
+				max-height: 20px*4;
+			}
+			&__text{
+				font-size: 18px;
+				line-height: 25px;
+				max-height: 25px*4;
+			}
 		}
 	}
 	.map{
 		height: 390px;
+		
+		& img{
+			transform: scale(1.5);
+		}
+		
 	}
 	.contact{
 		padding: 0 0 30px;
 		&-form{
 			padding: 0;
 			margin: 60px 0 40px;
+			flex-direction: column;
+			height: 480px;
+			& input,
+			& textarea{
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+		&-list{
+			width: 100%;
 		}
 		&-btn{
 			margin-left: 0;
@@ -1286,17 +1339,25 @@ img:hover{
 		& .container{
 			padding-top: 80px;
 			padding-bottom: 80px;
+			flex-direction: column;
 		}
 		&-address{
-			width: 60%;
+			width: 80%;
+			-webkit-justify-content: space-around;
+			        justify-content: space-around;
 		}
 		&-box{
 			line-height: 23px;
 		}
 		&-soc{
-			width: 40%;
+			width: 100%;
 			padding-right: 0;
+			justify-content: center;
 		}
+	}
+	.footer-soc-list{
+		justify-content: center;
+		margin-top: 65px;
 	}
 	.footer-copy{
 		height: 70px;
@@ -1305,10 +1366,548 @@ img:hover{
 
 
 @media screen and (min-width : 481px) and (max-width : 768px){
+	.container{
+		padding: 50px 50px;
+	}
+	.title{
+		font-size: 45px;
+	}
+	.title-small{
+		margin: 40px 0;
+		padding: 0;
+	}
+	.header{
+		justify-content: center;
+		& h1{
+			margin-top: 50px;
+			font-size: 50px;
+			line-height: 50px;
+		}
+		& p{
+			margin-top: 40px;
+			font-size: 30px;
+		}
+		&-btn{
+			margin: 20px 0;
+			& a{
+				
+			}
+		}
+	}
+	.nav{
+		height: auto;
+		padding: 15px 0;
+		&-menu{
+			flex-wrap: wrap;
+			height: 120px;
+	    }
+	}
+	.about{
+		& .container{
+			padding-top: 70px;
+			padding-bottom: 30px;
+		}
+		&-content{
+			flex-direction: column;
+			align-content: center;
+		}
+		&-team{
+			margin-top: 50px;
+			flex-direction: column;
+			align-content: center;
+		}
+		&-content-box{
+			width: 100%;
+			line-height: 23px;
+			margin-left: 0;
+			margin-top: 15px;
+		}
+		&-team-box{
+			margin-left: 0;
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+
+	.persone{
+		width: 100%;
+		height: 650px;
+		margin-bottom: 50px;
+		margin-left: 0;
+		&__img,
+		&__img img{
+			height: 370px;
+		}
+		&-about{
+			padding: 0 15px 20px;
+			display: none;
+		}
+		&-about-hov{
+			padding: 0 15px 20px;
+			top: 370px;
+			height: 315px;
+			opacity: 1;
+		}
+		&__name{
+			font-size: 17px;
+		}
+		&__name:before{
+			margin-right: 4px;
+		}
+		&__name:after{
+			margin-left: 4px;
+		}
+		&__soc{
+			width: 230px;
+		}
+		&__soc-list{
+			padding: 0 40px;
+		}
+	}
 	
+	.potrfolio{
+		& .container{
+			padding-top: 50px;
+		}
+		&-buttons{
+			margin: 40px 0;
+			flex-wrap: wrap;
+		}
+		&-btn{
+			height: auto;
+		}
+		&-gallery{
+			&-box{
+				margin-top: 15px;
+				& img{
+					transform: scale(1.05);
+				}
+			}
+			&-hov{
+				margin-top: 15px;
+			}
+			&-item{
+				width: 80%;
+				overflow: hidden;
+			}
+		}
+	}
+	
+	.services{
+		padding-bottom: 60px;
+		&-content{
+			flex-direction: column;
+			margin: 0;
+			&-box{
+				margin-top: 50px;
+				margin-left: 0;
+			}
+			&-item{
+				margin-top: 50px;
+			}
+			&-icon{
+				width: 90px;
+				height: 90px;
+			}
+			&-title-small{
+				font-size: 32px;
+			}
+			&-text{
+				line-height: 23px;
+			}
+			&-btn{
+				opacity: 1;
+				margin-top: 25px;
+			}
+		}
+	}
+	.blog{
+		& .container{
+			padding-top: 50px;
+			padding-bottom: 0;
+		}
+		&-box{
+			width: 100%;
+			justify-content: center;
+		}
+		&-item{
+			width: 90%;
+			height: auto;
+			margin-left: 0;
+			margin-top: 15px;
+			&-about{
+				height: 335px;
+			}
+			&__category a{
+				font-size: 15px;
+			}
+			&__title a{
+				font-size: 22px;
+				line-height: 20px;
+				max-height: 20px*4;
+			}
+			&__text{
+				font-size: 18px;
+				line-height: 25px;
+				max-height: 25px*4;
+			}
+		}
+	}
+	.map{
+		height: 390px;
+		
+		& img{
+			transform: scale(2);
+			height: auto;
+		}
+		
+	}
+	.contact{
+		padding: 0 0 30px;
+		&-form{
+			padding: 0;
+			margin: 60px 0 40px;
+			flex-direction: column;
+			height: 480px;
+			& input,
+			& textarea{
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+		&-list{
+			width: 100%;
+		}
+		&-btn{
+			margin-left: 0;
+		}
+	}
+	.footer-nav{
+		height: auto;
+	}
+	.footer-info{
+		padding-top: 0;
+		& .container{
+			padding: 60px 30px;
+			flex-direction: column;
+		}
+		&-address{
+			width: 100%;
+			justify-content: space-between;
+		}
+		&-box{
+			line-height: 23px;
+			font-size: 13px;
+			width: 30%;
+		}
+		&-soc{
+			width: 100%;
+			padding-right: 0;
+			justify-content: center;
+		}
+	}
+	.footer-soc-list{
+		justify-content: center;
+		margin-top: 65px;
+	}
+
+	.footer-copy{
+		height: auto;
+		flex-direction: column;
+		& p{
+			display: block;
+			margin-top: 30px;
+		}
+		& .footer-list{
+			margin-bottom: 30px;
+		}
+	}
 }
 
-
 @media screen and (max-width : 480px){
+	.container{
+		padding: 50px 20px;
+	}
+	.title{
+		font-size: 45px;
+	}
+	.title-small{
+		margin: 40px 0;
+		padding: 0;
+	}
+	.header{
+		justify-content: center;
+		& h1{
+			margin-top: 50px;
+			font-size: 50px;
+			line-height: 50px;
+		}
+		& p{
+			margin-top: 40px;
+			font-size: 30px;
+			line-height: 1;
+		}
+		&-buttons{
+			margin-top: 30px;
+			flex-direction: column;
+		}
+		&-btn{
+			margin: 0;
+			& a{
+				
+			}
+		}
+	}
+	.nav{
+		height: auto;
+		padding: 15px 0;
+		&-menu{
+			flex-wrap: wrap;
+			flex-direction: column;
+			height: auto;
+	    }
+	}
+	.about{
+		& .container{
+			padding-top: 70px;
+			padding-bottom: 30px;
+		}
+		&-content{
+			flex-direction: column;
+			align-content: center;
+		}
+		&-team{
+			margin-top: 50px;
+			flex-direction: column;
+			align-content: center;
+		}
+		&-content-box{
+			width: 100%;
+			line-height: 23px;
+			margin-left: 0;
+			margin-top: 15px;
+		}
+		&-team-box{
+			margin-left: 0;
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+
+	.persone{
+		width: 100%;
+		height: 650px;
+		margin-bottom: 50px;
+		margin-left: 0;
+		&__img,
+		&__img img{
+			height: 370px;
+		}
+		&-about{
+			padding: 0 15px 20px;
+			display: none;
+		}
+		&-about-hov{
+			padding: 0 15px 20px;
+			top: 370px;
+			height: 315px;
+			opacity: 1;
+		}
+		&__name{
+			font-size: 17px;
+		}
+		&__name:before{
+			margin-right: 4px;
+		}
+		&__name:after{
+			margin-left: 4px;
+		}
+		&__soc{
+			width: 230px;
+		}
+		&__soc-list{
+			padding: 0 40px;
+		}
+	}
 	
+	.potrfolio{
+		& .container{
+			padding-top: 50px;
+		}
+		&-buttons{
+			margin: 40px 0;
+			flex-wrap: wrap;
+		}
+		&-btn{
+			height: auto;
+		}
+		&-gallery{
+			&-box{
+				margin-top: 15px;
+				& img{
+					transform: scale(1.05);
+				}
+			}
+			&-hov{
+				margin-top: 15px;
+			}
+			&-item{
+				width: 80%;
+				overflow: hidden;
+			}
+		}
+	}
+	
+	.services{
+		padding-bottom: 60px;
+		&-content{
+			flex-direction: column;
+			margin: 0;
+			&-box{
+				margin-top: 50px;
+				margin-left: 0;
+			}
+			&-item{
+				margin-top: 50px;
+			}
+			&-icon{
+				width: 90px;
+				height: 90px;
+			}
+			&-title-small{
+				font-size: 32px;
+			}
+			&-text{
+				line-height: 23px;
+			}
+			&-btn{
+				opacity: 1;
+				margin-top: 25px;
+			}
+		}
+	}
+	.blog{
+		& .container{
+			padding-top: 50px;
+			padding-bottom: 0;
+		}
+		&-box{
+			width: 100%;
+			justify-content: center;
+		}
+		&-item{
+			width: 90%;
+			height: auto;
+			margin-left: 0;
+			margin-top: 15px;
+			&-about{
+				height: 335px;
+			}
+			&__category a{
+				font-size: 15px;
+			}
+			&__title a{
+				font-size: 22px;
+				line-height: 20px;
+				max-height: 20px*4;
+			}
+			&__text{
+				font-size: 18px;
+				line-height: 25px;
+				max-height: 25px*4;
+			}
+		}
+	}
+	.map{
+		height: 300px;
+		
+		& img{
+			transform: scale(4);
+			height: auto;
+		}
+		
+	}
+	.contact{
+		padding: 0 0 30px;
+		&-form{
+			padding: 0;
+			margin: 60px 0 40px;
+			flex-direction: column;
+			height: 480px;
+			& input,
+			& textarea{
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+		&-list{
+			width: 100%;
+		}
+		&-btn{
+			margin-left: 0;
+		}
+	}
+	.footer-nav{
+		height: auto;
+	}
+	.footer-info{
+		padding-top: 0;
+		& .container{
+			padding: 30px 30px 60px;
+			flex-direction: column;
+		}
+		&-address{
+			width: 80%;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		&-box{
+			line-height: 23px;
+			font-size: 13px;
+			width: 100%;
+			text-align: center;
+			margin-top: 20px;
+		}
+		&-soc{
+			width: 100%;
+			padding-right: 0;
+			justify-content: center;
+		}
+	}
+	.footer-soc-list{
+		justify-content: center;
+		margin-top: 65px;
+		&-item{
+			width: 45px;
+			height: 45px;
+			& a svg{
+				width: 45px;
+				height: 45px;
+			}
+		}
+	}
+	
+	.footer-copy{
+		height: auto;
+		flex-direction: column;
+		& p{
+			display: block;
+			margin-top: 30px;
+		}
+		& .footer-list{
+			margin-bottom: 30px;
+			flex-direction: column;
+		}
+	}
+	.btn{
+		&:first-of-type:before{
+			display: inline-block;
+		}
+	}
+	.nav-menu__item{
+		&:first-of-type:before{
+			display: inline-block;
+		}
+	}
 }
