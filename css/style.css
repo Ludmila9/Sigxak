@@ -1564,6 +1564,7 @@ img:hover {
     margin: 40px 0;
     padding: 0; }
   .header {
+    height: calc(100vh + 130px);
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
@@ -1572,7 +1573,7 @@ img:hover {
       font-size: 50px;
       line-height: 50px; }
     .header p {
-      margin-top: 40px;
+      margin-top: 20px;
       font-size: 30px;
       line-height: 1; }
     .header-buttons {
@@ -1802,9 +1803,9 @@ img:hover {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; }
-  .btn:first-of-type:before {
-    display: inline-block; }
-  .nav-menu__item:first-of-type:before {
-    display: inline-block; } }
+  .btn:before {
+    display: none; }
+  .nav-menu__item:before {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

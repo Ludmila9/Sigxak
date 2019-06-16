@@ -1632,6 +1632,7 @@ img:hover{
 		padding: 0;
 	}
 	.header{
+		height: calc(100vh + 130px);
 		justify-content: center;
 		& h1{
 			margin-top: 0;
@@ -1639,7 +1640,7 @@ img:hover{
 			line-height: 50px;
 		}
 		& p{
-			margin-top: 40px;
+			margin-top: 20px;
 			font-size: 30px;
 			line-height: 1;
 		}
@@ -1893,13 +1894,13 @@ img:hover{
 		}
 	}
 	.btn{
-		&:first-of-type:before{
-			display: inline-block;
+		&:before{
+			display: none;
 		}
 	}
 	.nav-menu__item{
-		&:first-of-type:before{
-			display: inline-block;
+		&:before{
+			display: none;
 		}
 	}
 }
