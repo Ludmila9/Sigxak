@@ -33,11 +33,6 @@ a{
 	box-sizing: border-box;
 }
 
-img:hover{
-	transform: scale(1.1);
-	opacity: 0.8;
-}
-
 .visually-hidden{
 	position: absolute !important;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -50,8 +45,8 @@ img:hover{
 }
 
 .container{
-	max-width: 1920px;
-	padding: 100px 260px;
+	max-width: 1400px;
+	padding: 100px 15px;
 	margin: 0 auto;
 }
 
@@ -70,12 +65,10 @@ img:hover{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	& a{
-		font-family: 'Signika', sans-serif;
-		font-size: 18px;
-		color: $light;
-		padding: 0 10px;
-	}
+	font-family: 'Signika', sans-serif;
+	font-size: 18px;
+	color: $light;
+	padding: 0 10px;
 	&:before{
 		content: '//';
 		display: inline-block;
@@ -170,8 +163,7 @@ img:hover{
 	position: absolute;
 	bottom: -68px;
 	& .container{
-		padding-top: 0;
-		padding-bottom: 0;
+		padding-top: 0 15px;
 	}
 	&-menu{
 		display: flex;
@@ -266,11 +258,15 @@ img:hover{
 		width: 100%;
 		overflow: hidden;
 		& img{
-			height: 268px;
+			height: 100%;
 			width: 100%;
 			object-fit: cover;
 			object-position: center;
 			transition: transform 1s ease, opacity 1s ease;
+			&:hover{
+				transform: scale(1.1);
+				opacity: 0.8;
+			}
 		}
 	}
 	&-about{
@@ -392,12 +388,10 @@ img:hover{
 		margin: 50px auto 85px;
 	}
 	& .btn{
+		color: #000;
 		&:before{
 		color: #000;
 		}
-	}
-	& .btn a{
-		color: #000;
 	}
 	&-gallery{
 		width: 100%;
@@ -421,14 +415,10 @@ img:hover{
 			height: 318px;
 			overflow: hidden;
 			& img{
+				width: 100%;
+				height: 100%;
 				object-fit: cover;
 				object-position: center;
-				transform: scale(1.01);
-				opacity: 1;
-				:hover{
-					transform: scale(1.01);
-					opacity: 1;
-				}
 			}
 		}
 		&-hov{
@@ -598,7 +588,12 @@ img:hover{
 				height: 335px;
 				object-fit: cover;
 				object-position: top;
+				opacity: 1;
 				transition: transform 1s ease, opacity 1s ease;
+				&:hover{
+					transform: scale(1.1);
+					opacity: 0.8;
+				}
 			}
 		}
 		&-about{
@@ -658,13 +653,9 @@ img:hover{
 	overflow: hidden;
 	& img{
 		width: 100%;
+		height: 100%;
 		object-fit: cover;
 		object-position: center top;
-		transform: scale(1.01);
-		opacity: 1;
-		&:hover{
-			transform: scale(1.01);
-		}
 	}
 }
 
@@ -767,7 +758,6 @@ img:hover{
 	}
 	&-info{
 		padding-top: 30px;
-		// padding-right: 110px;
 		background-color: $accent;
 		& .container{
 			display: flex;
@@ -786,14 +776,14 @@ img:hover{
 		&-box{
 			width: 165px;
 			font-family: 'Open Sans', sans-serif;
-			font-style: 18px;
+			font-size: 18px;
 			font-weight: 400;
 			line-height: 24px;
 			color: #fff;
 			& a{
 				display: block;
 				font-family: 'Open Sans', sans-serif;
-				font-style: 18px;
+				font-size: 18px;
 				font-weight: 400;
 				line-height: 24px;
 				color: #fff;
@@ -882,19 +872,11 @@ img:hover{
 
 
 @media screen and (min-width : 1641px) and (max-width : 1760px){
-	.container{
-		padding: 100px 200px;
-	}
-	.map{
-		height: 530px;
-	}
+	
 }
 
 
 @media screen and (min-width : 1421px) and (max-width : 1640px){
-	.container{
-		padding: 100px 130px;
-	}
 	.persone{
 		height: 570px;
 		&__name:before{
@@ -910,15 +892,12 @@ img:hover{
 	.persone:hover .persone-about-hov{
 		height: 315px;
 	}
-	.map{
-		height: 460px;
-	}
 }
 
 
 @media screen and (min-width : 1201px) and (max-width : 1420px){
 	.container{
-		padding: 70px 50px;
+		padding: 70px 15px;
 	}
 
 	.header{
@@ -973,9 +952,6 @@ img:hover{
 			line-height: 20px;
 		}
 	}
-	.map{
-		height: 390px;
-	}
 	.contact-form{
 		padding: 0 40px 0 80px;
 	}
@@ -994,7 +970,7 @@ img:hover{
 
 @media screen and (min-width : 993px) and (max-width : 1200px){
 	.container{
-		padding: 50px 50px;
+		padding: 50px 15px;
 	}
 	.title-small{
 		margin: 40px 0;
@@ -1014,7 +990,6 @@ img:hover{
 			margin: 20px 0;
 		}
 	}
-
 	.about{
 		& .container{
 			padding-top: 70px;
@@ -1027,14 +1002,12 @@ img:hover{
 			line-height: 23px;
 		}
 	}
-	
 	.about-content-box,
 	.about-team-box,
 	.persone{
 		margin-left: 25px;
 		width: calc((100%-25px)/2);
 	}
-	
 	.persone{
 		height: 570px;
 		&__name:before{
@@ -1083,7 +1056,6 @@ img:hover{
 			}
 		}
 	}
-
 	.services{
 		padding-bottom: 60px;
 		&-content{
@@ -1099,9 +1071,6 @@ img:hover{
 			}
 		}
 	}
-	.map{
-		height: 390px;
-	}
 	.contact{
 		padding: 0 0 30px;
 		&-form{
@@ -1112,7 +1081,6 @@ img:hover{
 			margin-left: 0;
 		}
 	}
-
 	.footer-info{
 		padding-top: 0;
 		& .container{
@@ -1138,7 +1106,7 @@ img:hover{
 
 @media screen and (min-width : 769px) and (max-width : 992px){
 	.container{
-		padding: 50px 50px;
+		padding: 50px 15px;
 	}
 	.title{
 		font-size: 45px;
@@ -1159,12 +1127,8 @@ img:hover{
 		}
 		&-btn{
 			margin: 20px 0;
-			& a{
-				
-			}
 		}
 	}
-
 	.about{
 		& .container{
 			padding-top: 70px;
@@ -1190,15 +1154,13 @@ img:hover{
 			width: 100%;
 		}
 	}
-
 	.persone{
 		height: 650px;
 		margin-bottom: 50px;
 		&:nth-of-type(2n){
 			margin-left: 50px;
 		}
-		&__img,
-		&__img img{
+		&__img{
 			height: 370px;
 		}
 		&-about{
@@ -1227,7 +1189,6 @@ img:hover{
 			padding: 0 40px;
 		}
 	}
-	
 	.potrfolio{
 		& .container{
 			padding-top: 50px;
@@ -1247,7 +1208,6 @@ img:hover{
 			}
 		}
 	}
-	
 	.services{
 		padding-bottom: 60px;
 		&-content{
@@ -1305,12 +1265,6 @@ img:hover{
 			}
 		}
 	}
-	.map{
-		height: 390px;
-		& img{
-			transform: scale(1.5);
-		}
-	}
 	.contact{
 		padding: 0 0 30px;
 		&-form{
@@ -1331,7 +1285,6 @@ img:hover{
 			margin-left: 0;
 		}
 	}
-
 	.footer-info{
 		padding-top: 0;
 		& .container{
@@ -1341,8 +1294,7 @@ img:hover{
 		}
 		&-address{
 			width: 80%;
-			-webkit-justify-content: space-around;
-			        justify-content: space-around;
+			justify-content: space-around;
 		}
 		&-box{
 			line-height: 23px;
@@ -1365,7 +1317,7 @@ img:hover{
 
 @media screen and (min-width : 481px) and (max-width : 768px){
 	.container{
-		padding: 50px 50px;
+		padding: 50px 15px;
 	}
 	.title{
 		font-size: 45px;
@@ -1423,14 +1375,12 @@ img:hover{
 			flex-direction: column;
 		}
 	}
-
 	.persone{
 		width: 100%;
 		height: 650px;
 		margin-bottom: 50px;
 		margin-left: 0;
-		&__img,
-		&__img img{
+		&__img{
 			height: 370px;
 		}
 		&-about{
@@ -1459,7 +1409,6 @@ img:hover{
 			padding: 0 40px;
 		}
 	}
-	
 	.potrfolio{
 		& .container{
 			padding-top: 50px;
@@ -1474,9 +1423,6 @@ img:hover{
 		&-gallery{
 			&-box{
 				margin-top: 15px;
-				& img{
-					transform: scale(1.05);
-				}
 			}
 			&-hov{
 				margin-top: 15px;
@@ -1487,7 +1433,6 @@ img:hover{
 			}
 		}
 	}
-	
 	.services{
 		padding-bottom: 60px;
 		&-content{
@@ -1548,15 +1493,6 @@ img:hover{
 			}
 		}
 	}
-	.map{
-		height: 390px;
-		
-		& img{
-			transform: scale(2);
-			height: auto;
-		}
-		
-	}
 	.contact{
 		padding: 0 0 30px;
 		&-form{
@@ -1594,6 +1530,12 @@ img:hover{
 			line-height: 23px;
 			font-size: 13px;
 			width: 30%;
+			& a{
+				font-size: 14px;
+			}
+			& span{
+				font-size: 13px;
+			}
 		}
 		&-soc{
 			width: 100%;
@@ -1621,7 +1563,7 @@ img:hover{
 
 @media screen and (max-width : 480px){
 	.container{
-		padding: 50px 20px;
+		padding: 50px 15px;
 	}
 	.title{
 		font-size: 45px;
@@ -1692,8 +1634,7 @@ img:hover{
 		height: 650px;
 		margin-bottom: 50px;
 		margin-left: 0;
-		&__img,
-		&__img img{
+		&__img{
 			height: 370px;
 		}
 		&-about{
@@ -1722,7 +1663,6 @@ img:hover{
 			padding: 0 40px;
 		}
 	}
-	
 	.potrfolio{
 		& .container{
 			padding-top: 50px;
@@ -1737,9 +1677,6 @@ img:hover{
 		&-gallery{
 			&-box{
 				margin-top: 15px;
-				& img{
-					transform: scale(1.05);
-				}
 			}
 			&-hov{
 				margin-top: 15px;
@@ -1750,7 +1687,6 @@ img:hover{
 			}
 		}
 	}
-	
 	.services{
 		padding-bottom: 60px;
 		&-content{
@@ -1811,14 +1747,6 @@ img:hover{
 			}
 		}
 	}
-	.map{
-		height: 300px;
-		& img{
-			transform: scale(4);
-			height: auto;
-		}
-		
-	}
 	.contact{
 		padding: 0 0 30px;
 		&-form{
@@ -1860,6 +1788,12 @@ img:hover{
 			width: 100%;
 			text-align: center;
 			margin-top: 20px;
+			& a{
+				font-size: 14px;
+			}
+			& span{
+				font-size: 13px;
+			}
 		}
 		&-soc{
 			width: 100%;
@@ -1879,7 +1813,6 @@ img:hover{
 			}
 		}
 	}
-	
 	.footer-copy{
 		height: auto;
 		flex-direction: column;
